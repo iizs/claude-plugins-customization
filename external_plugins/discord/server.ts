@@ -466,6 +466,10 @@ const mcp = new Server(
 // Stores full permission details for "See more" expansion keyed by request_id.
 const pendingPermissions = new Map<string, { tool_name: string; description: string; input_preview: string }>()
 
+// Tracks the most recently active group channel ID, used for routing permission
+// requests to the channel instead of DMs.
+let lastActiveGroupChannelId: string | null = null
+
 // Receive permission_request from CC → format → send to all allowlisted DMs.
 // Groups are intentionally excluded — the security thread resolution was
 // "single-user mode for official plugins." Anyone in access.allowFrom
@@ -501,15 +505,30 @@ mcp.setNotificationHandler(
         .setEmoji('❌')
         .setStyle(ButtonStyle.Danger),
     )
-    for (const userId of access.allowFrom) {
+    if (lastActiveGroupChannelId) {
+      // Route to the last active group channel instead of DMs.
       void (async () => {
         try {
-          const user = await client.users.fetch(userId)
-          await user.send({ content: text, components: [row] })
+          const ch = await client.channels.fetch(lastActiveGroupChannelId!)
+          if (ch && 'send' in ch) {
+            await ch.send({ content: text, components: [row] })
+          }
         } catch (e) {
-          process.stderr.write(`permission_request send to ${userId} failed: ${e}\n`)
+          process.stderr.write(`permission_request send to channel ${lastActiveGroupChannelId} failed: ${e}\n`)
         }
       })()
+    } else {
+      // Fallback to DMs if no group channel has been active yet.
+      for (const userId of access.allowFrom) {
+        void (async () => {
+          try {
+            const user = await client.users.fetch(userId)
+            await user.send({ content: text, components: [row] })
+          } catch (e) {
+            process.stderr.write(`permission_request send to ${userId} failed: ${e}\n`)
+          }
+        })()
+      }
     }
   },
 )
@@ -822,6 +841,11 @@ async function handleInbound(msg: Message): Promise<void> {
   }
 
   const chat_id = msg.channelId
+
+  // Track the last active group channel for routing permission requests.
+  if (msg.channel.type !== ChannelType.DM) {
+    lastActiveGroupChannelId = chat_id
+  }
 
   // Permission-reply intercept: if this looks like "yes xxxxx" for a
   // pending permission request, emit the structured event instead of
