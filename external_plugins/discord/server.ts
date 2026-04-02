@@ -108,6 +108,8 @@ type Access = {
   /** Keyed on channel ID (snowflake), not guild ID. One entry per guild channel. */
   groups: Record<string, GroupPolicy>
   pending: Record<string, PendingEntry>
+  /** Bot user IDs allowed to send messages (e.g. other team agents). */
+  allowBots?: string[]
   mentionPatterns?: string[]
   // delivery/UX config — optional, defaults live in the reply handler
   /** Emoji to react with on receipt. Empty string disables. Unicode char or custom emoji ID. */
@@ -158,6 +160,7 @@ function readAccessFile(): Access {
       groups: parsed.groups ?? {},
       pending: parsed.pending ?? {},
       mentionPatterns: parsed.mentionPatterns,
+      allowBots: parsed.allowBots,
       ackReaction: parsed.ackReaction,
       replyToMode: parsed.replyToMode,
       textChunkLimit: parsed.textChunkLimit,
@@ -819,7 +822,11 @@ client.on('interactionCreate', async (interaction: Interaction) => {
 })
 
 client.on('messageCreate', msg => {
-  if (msg.author.bot) return
+  if (msg.author.bot) {
+    // Allow bots explicitly listed in allowBots (e.g. other team agents); drop all others.
+    const access = loadAccess()
+    if (!access.allowBots?.includes(msg.author.id)) return
+  }
   handleInbound(msg).catch(e => process.stderr.write(`discord: handleInbound failed: ${e}\n`))
 })
 
