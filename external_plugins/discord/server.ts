@@ -225,6 +225,8 @@ type GateResult =
 const recentSentIds = new Set<string>()
 const RECENT_SENT_CAP = 200
 
+const dmChannelUsers = new Map<string, string>()
+
 function noteSent(id: string): void {
   recentSentIds.add(id)
   if (recentSentIds.size > RECENT_SENT_CAP) {
@@ -407,7 +409,8 @@ async function fetchAllowedChannel(id: string) {
   const ch = await fetchTextChannel(id)
   const access = loadAccess()
   if (ch.type === ChannelType.DM) {
-    if (access.allowFrom.includes(ch.recipientId)) return ch
+    const userId = ch.recipientId ?? dmChannelUsers.get(id)
+    if (userId && access.allowFrom.includes(userId)) return ch
   } else {
     const key = ch.isThread() ? ch.parentId ?? ch.id : ch.id
     if (key in access.groups) return ch
@@ -852,6 +855,9 @@ async function handleInbound(msg: Message): Promise<void> {
   // Track the last active group channel for routing permission requests.
   if (msg.channel.type !== ChannelType.DM) {
     lastActiveGroupChannelId = chat_id
+  }
+  if (msg.channel.type === ChannelType.DM) {
+    dmChannelUsers.set(chat_id, msg.author.id)
   }
 
   // Permission-reply intercept: if this looks like "yes xxxxx" for a
