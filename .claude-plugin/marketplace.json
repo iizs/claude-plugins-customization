@@ -24,7 +24,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/amekala/adspirer-mcp-plugin.git",
-        "sha": "aa70dbdbbbb843e94a794c10c2b13f5dd66b5e40"
+        "sha": "c40623f1aa7b568e960d3f2e2558a6fcf10e6c18"
       },
       "homepage": "https://www.adspirer.com"
     },
@@ -67,7 +67,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/AikidoSec/aikido-claude-plugin.git",
-        "sha": "d7fa8b8e192680d9a26c1a5dcaead7cf5cdb7139"
+        "sha": "79ac524f87c9faa9a356ff3d495b8a5b77e01bbd"
       },
       "homepage": "https://github.com/AikidoSec/aikido-claude-plugin"
     },
@@ -108,7 +108,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/astronomer/agents.git",
-        "sha": "7ef022b02f5296b5ecc52ba0db3ba9345ec03c9e"
+        "sha": "7ce4a12d3cabb506294134c91a1b876d4b166a70"
       },
       "homepage": "https://github.com/astronomer/agents"
     },
@@ -118,7 +118,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/atlanhq/agent-toolkit.git",
-        "sha": "acdf284da6aa98b14f8dad90a9827006d8df425c"
+        "sha": "789507c02d2495235240d10d67aaac8b2051023a"
       },
       "homepage": "https://docs.atlan.com/"
     },
@@ -255,7 +255,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/cap-js/mcp-server.git",
-        "sha": "4d59d7070a52761a9b8028cbe710c8d7477cbc92"
+        "sha": "b78913198fe1021f0d8b36b0e4ba0ca27003452f"
       },
       "homepage": "https://cap.cloud.sap/"
     },
@@ -266,7 +266,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp.git",
-        "sha": "c2d8009ff75f76bce1ec4cf79c2467b50d81725e"
+        "sha": "7afd01673f99126e3cd98eb7f62190d7784ef71a"
       },
       "homepage": "https://github.com/ChromeDevTools/chrome-devtools-mcp"
     },
@@ -444,7 +444,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/astronomer/agents.git",
-        "sha": "7ef022b02f5296b5ecc52ba0db3ba9345ec03c9e"
+        "sha": "7ce4a12d3cabb506294134c91a1b876d4b166a70"
       },
       "homepage": "https://github.com/astronomer/agents"
     },
@@ -735,7 +735,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/intercom/claude-plugin-external.git",
-        "sha": "eeef353eead2e3dc5f33f64dbaae54e1309e0d45"
+        "sha": "62773a7d4b8aac31545d6888fe6479be3bc53804"
       },
       "homepage": "https://github.com/intercom/claude-plugin-external"
     },
@@ -882,7 +882,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/mintlify/mintlify-claude-plugin.git",
-        "sha": "ce435be18a700dc849d6a63a80da4816d1e2128c"
+        "sha": "0436f38141238860186f48d9918c39bc94fe5b59"
       },
       "homepage": "https://www.mintlify.com/"
     },
@@ -1013,7 +1013,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/PagerDuty/claude-code-plugins.git",
-        "sha": "b16c23e0d790deceaa7a6182616d0e36673f2eae"
+        "sha": "761cba75bd50fd561405c3b173ecf36084432089"
       },
       "homepage": "https://github.com/PagerDuty/claude-code-plugins"
     },
@@ -1057,7 +1057,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/planetscale/claude-plugin.git",
-        "sha": "f1066cac5bb956bbbb05918f5b07fe0e873d44ea"
+        "sha": "849552445a90b17f2b17267593d0a10d41d4b316"
       },
       "homepage": "https://planetscale.com/"
     },
@@ -1106,7 +1106,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/gitroomhq/postiz-agent.git",
-        "sha": "c5d1bf5f7e95a71e230fc19ae2150ddd9c549854"
+        "sha": "41c5a9dbd6b2776863e7c05c22e7a385c208321c"
       },
       "homepage": "https://postiz.com/agent"
     },
@@ -1207,7 +1207,7 @@
         "url": "https://github.com/railwayapp/railway-skills.git",
         "path": "plugins/railway",
         "ref": "main",
-        "sha": "d52f3741a6a33a3191d6138eb3d6c3355cb970d1"
+        "sha": "1df604ebd18f528ff16b84975125ecff944cc036"
       },
       "homepage": "https://docs.railway.com/ai/claude-code-plugin"
     },
@@ -1229,7 +1229,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/RevenueCat/rc-claude-code-plugin.git",
-        "sha": "af7cb77996aee4e7e3c109c5afec81f716139032"
+        "sha": "b34f9bebe02ceb7e3f32e6d7d081cdfb2e7c37a6"
       },
       "homepage": "https://www.revenuecat.com"
     },
@@ -1250,7 +1250,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/RevenueCat/rc-claude-code-plugin.git",
-        "sha": "af7cb77996aee4e7e3c109c5afec81f716139032"
+        "sha": "b34f9bebe02ceb7e3f32e6d7d081cdfb2e7c37a6"
       },
       "homepage": "https://www.revenuecat.com"
     },
@@ -1320,7 +1320,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/sanity-io/agent-toolkit.git",
-        "sha": "4b1fb10bd707a22cf0cdfad5374ffc885f2ffa8d"
+        "sha": "66f0ec5d9167b3ccb8b3450e5ec34f3b523d4139"
       },
       "homepage": "https://www.sanity.io"
     },
@@ -1464,7 +1464,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/sourcegraph-community/sourcegraph-claudecode-plugin.git",
-        "sha": "cfe3d44476957b16d1575261bef6b2dc7cb1e0b7"
+        "sha": "332ee0ca9a409ccd791abee43c7abf2606469017"
       },
       "homepage": "https://sourcegraph.com"
     },
@@ -1522,7 +1522,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/sumup/sumup-skills.git",
-        "sha": "802476c39a0422d3277e37288b03968ad731bc30"
+        "sha": "715464b459def2d16e930e9ec8008f60e18a8b4d"
       },
       "homepage": "https://www.sumup.com/"
     },
@@ -1666,7 +1666,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "15dda227e34959b1340e33bb9aede7e23a273f42"
+        "sha": "8ed898abcfa5fb3ff8e43c4c1c39d7a55d9cedef"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
@@ -1676,7 +1676,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/Automattic/claude-code-wordpress.com.git",
-        "sha": "e4d23c3bffdcdb7f70134ab6a1a110258ff75cfd"
+        "sha": "052ca970df2c577d7c651e784935186ff93e6779"
       },
       "homepage": "https://developer.wordpress.com/wordpress-com-claude-code-plugin/"
     },
